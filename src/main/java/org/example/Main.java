@@ -36,8 +36,11 @@ public class Main {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        //Creates a class which implements the TodoService interface at runtime
         TodoService todoService = retrofit.create(TodoService.class);
+
         Todo t = todoService.getTodoById("1").execute().body();
+
         System.out.println("Todo Object downloaded is " + t.toString());
 
 
